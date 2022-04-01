@@ -1,0 +1,51 @@
+// header section
+.dmm-header {
+    display: none;
+    .logo-side {
+        width: 188px;
+        img {
+            display: none;
+            @media (min-width: 768px) {
+                display: block;
+                width: 100%;
+                margin:0 auto;
+            }
+        }
+    }
+    .dmm-header-main {
+        display: none;
+        // width: 100%;
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 38px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            align-items: center;
+            li {
+                list-style-type: none;
+                padding: 15px 0;
+                letter-spacing: 2.2px;
+                a {
+                    text-decoration: none;
+                    color: #354f5c;
+                    @include font-size(1rem);
+                    font-family: $secondary-font;
+                    font-weight: 400;
+                    transition: color 0.3s ease-in-out;
+                    &:hover {
+                        color:$secondary-color;
+                    }
+                }
+            }
+        }
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+    @media (min-width: 992px) {
+        display: block;
+    }
+}

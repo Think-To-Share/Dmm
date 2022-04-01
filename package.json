@@ -29,5 +29,10 @@
     "> 1%",
     "iOS 7",
     "last 3 iOS versions"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "rfs": "^9.0.6",
+    "tiny-slider": "^2.9.4"
+  }
 }

@@ -1,0 +1,185 @@
+// hero section
+.dmm-hero-section{
+    .tns-outer {
+        position: relative;
+        .tns-nav {
+            display: none;
+            justify-content: center;
+            position: absolute;
+            bottom: 26px;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            @media (min-width: 768px) {
+                display: flex;
+            }
+            button {
+                padding: 7px;
+                border: none;
+                background-color: change-color($color: $primary-color, $alpha: 0.5);
+                border-radius: 50%;
+                box-shadow: none;
+                margin-left: 20px;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &.tns-nav-active {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+    .slides{
+        .slide{
+            background-size: cover;
+            background-position: right center;
+            @media (min-width: 768px){
+                background-position: top center;
+            }
+            .slide-main{
+                align-items: flex-end; 
+                height: 60vh;
+                display: flex;
+                background-size: cover;
+            }      
+        }   
+    }
+}
+
+// blog section
+.blog-section{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .blog-heading-container{
+        text-align: center;
+        width: 100%;
+        .blog-heading{
+            text-align: center;
+            color: $primary-color;
+            font-family: $primary-font;
+            @include font-size(1.3rem);
+            font-weight: 500;
+            background-color: $secondary-color;
+            padding: 10px 35px;
+            display: inline-block;
+            border-radius: 50px;
+        }
+    }
+    .blog-heading-text{
+        font-family: $primary-font;
+        font-weight: 700;
+        @include font-size(1.8rem);
+        text-align: center;
+        color: $primary-color;
+    }
+    .blog-text{
+        text-decoration: none;
+        .card{
+            border: none;
+            box-shadow: 0px 1px 14px 6px #e5e5e5;
+            .img-container{
+                overflow: hidden;
+                position: relative;
+                .card-img-top{
+                    transition: transform .4s ease-in-out;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -75%;
+                    z-index: 2;
+                    display: block; 
+                    width: 50%;
+                    height: 100%;
+                    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+                    transform: skewX(-25deg);
+                    transition: none;
+                }
+                &:hover{
+                    .card-img-top{
+                        transform: scale(1.2);
+                    }
+                    &::before{
+                        transition: left 0.4s ease-in;
+                        left: 100%;
+                    }    
+                }
+            }
+            
+            .card-body{
+                padding: 10px 30px 20px 30px ;
+                .card-date{
+                    text-align: left;
+                    font-family: $secondary-font;
+                    font-weight: 400;
+                     @include font-size(0.9rem); 
+                    color: $primary-color;
+                    margin: 0;
+                }
+                .card-heading-text{
+                    text-align: left;
+                    font-family: $primary-font;
+                    font-weight: 500;
+                    @include font-size(1.6rem);
+                    color: $primary-color;
+                    margin: 0;
+                    padding-bottom: 5px;
+                    }
+                .card-text{
+                    text-align: left;
+                    font-family: $secondary-font;
+                    font-weight: 300;
+                    @include font-size(1.1rem); 
+                    color: #6b6b6e;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    line-height: 20px;
+                }
+                .readmore-btn{
+                    text-decoration: none;
+                    color: $primary-color;
+                    @include font-size(1rem);
+                    font-weight: 500;
+                    font-family: $secondary-font;
+                    display: inline-flex;
+                    align-items: center;
+                    column-gap: 5px;
+                    svg{
+                        height: 15px;
+                        width: 15px;
+                        fill: $primary-color;
+                        transition: transform 0.2s ease-in-out;
+                    }
+                    &:hover{
+                        svg{
+                            transform: translateX(5px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .blog-btn-container{
+        text-align: center;
+        width: 100%;
+        margin-top: 44px;
+        .blog-btn{
+            text-decoration: none;
+            text-align: center;
+            color: #ffffff;
+            background-color: $secondary-color;
+            @include font-size(0.9rem);
+            padding: 15px 45px;
+            display: inline-block;
+            font-family: $secondary-font;
+            font-weight: 500;
+            border:1px solid $secondary-color;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+    } 
+}
