@@ -46,6 +46,58 @@
     }
 }
 
+// dmm-key-strength-section start
+.dmm-key-strength-section{
+    .coloum-image{
+        background-image: url(../images/key-strength-bg.jpg);
+        background-position: bottom;
+        background-size: 478px 438px;
+        background-position-y: center;
+        background-position-x: left;
+        background-repeat: no-repeat;
+        .key-strength-heading{
+            color: $primary-color;
+            font-weight: 700;
+            font-family: $primary-font;
+            @include font-size(2.3rem);
+            margin-top: 500px;
+        }
+        .slide{
+            .carousel-inner{
+                .carousel-item{
+                    .key-strength-second-heading{
+                        font-family: $primary-font;
+                        font-weight: 500;
+                        color: #31b1d8;
+                        @include font-size(1.7rem);
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                    .key-strength-text{
+
+                    }
+                }
+            }
+        }
+    }
+    .image-container{
+        // display: flex;
+        img{
+            margin: 0 auto;
+            display: flex;
+        }
+    }
+    .carousel-indicators{
+        top:102%;
+        button{
+            background-color: #000;
+        }
+    }
+    .carousel-indicators [data-bs-target]{
+        height: 1px;
+    }
+}
+
 // blog section
 .blog-section{
     margin-top: 50px;

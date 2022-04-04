@@ -1,0 +1,92 @@
+.footer-sec{
+    .widget-container{
+        img{
+            width: 188px;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            .text{
+                margin: 0;
+                padding: 0;
+                color: #7f8283;
+                font-family: $secondary-font;
+                font-weight: 400;
+                @include font-size(0.9rem);
+                padding-top: 29px;
+            }
+            li{
+                text-align: center;
+                @include font-size(0.9rem);
+                margin-bottom: 2px;
+                @media(min-width:768px){
+                    text-align: left;
+                    
+                }
+                 a{
+                    font-family: $secondary-font;
+                    color:#7f8283;
+                    font-weight: 400;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                 }
+               
+            }
+        }
+    }  
+    .widget-heading{
+        font-family: $secondary-font;
+        font-weight: 600;
+        @include font-size(1.3rem);
+        color: #7f8283;
+    }
+    .textwidget{
+        p{
+            font-family: $secondary-font;
+            color:#7f8283;
+            font-weight: 400;
+            @include font-size(0.9rem);
+            padding: 0;
+            margin: 0;
+            margin-bottom: 2px;
+            a{
+                font-family: $secondary-font;
+                color:#7f8283;
+                font-weight: 400;
+                text-decoration: none;
+                @include font-size(0.9rem);
+            }
+        }
+    }
+    .line-btn{
+        margin-top: 20px;
+        margin-bottom: 23px;
+        .line{
+            border: 1px solid $primary-color;
+            font-weight: 400;
+            font-family: $primary-font;
+            float: left;
+            width: 100%;
+        }
+    }
+    .copy-right{
+        .copyright-text{
+            text-align: center;
+            font-family: $secondary-font;
+            color:#7f8283;
+            font-weight: 400;
+            @include font-size(1rem);
+            a{
+                text-decoration: none;
+                font-family: $secondary-font;
+                color:#7f8283;
+                font-weight: 400;
+                @include font-size(1rem);
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
