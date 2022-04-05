@@ -74,7 +74,12 @@
                         margin-bottom: 10px;
                     }
                     .key-strength-text{
-
+                        font-family: $secondary-font;
+                        font-weight: 400;
+                        @include font-size(1rem);
+                        margin: 0;
+                        padding: 0;
+                        color: #7f8283;
                     }
                 }
             }
@@ -95,6 +100,38 @@
     }
     .carousel-indicators [data-bs-target]{
         height: 1px;
+    }
+}
+
+// icon section
+.icon-section{
+    background-image: url(../images/icon-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .icon-heading{
+        padding-top: 50px;
+        text-align: center;
+        font-family: $secondary-font;
+        font-family:400;
+        @include font-size(1.7rem);
+        color: #ffffff;
+        span{
+            font-family: $primary-font;
+            font-family: 700;
+            color: $secondary-color;
+            @include font-size(2.2rem);
+        }
+    }
+    .col{
+        padding: 38px 0;
+        .icon-img{
+            width: 87%;
+            display: block;
+            margin: 0 auto;
+            @media (min-width:768px){
+                width: 61%;
+            }
+        }   
     }
 }
 
@@ -234,4 +271,64 @@
             }
         }
     } 
+}
+
+
+// provide-better-section
+.provide-better-section{    
+    .slider-container {
+        position: relative;
+        padding: 0;
+        @media (min-width:768px) {
+            padding: 2rem 5rem;
+        }
+        .tns-outer{
+            .tns-controls{
+                    position: absolute;
+                    z-index: 3;
+                    transform: translate(-50% ,-50%);
+                    top: 50%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    left: 50%;
+                button{
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    box-shadow: none;
+                    outline: none;
+                    position: relative;
+                    border: none;
+                    background: #515378;
+                    color: #fff;
+                    svg{
+                        fill: $primary-color;
+                        height: 20px;
+                        width: 20px;
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        
+        }
+
+        .slides{
+            .slide{
+                .better-main{
+                    .image-container{
+                        width: 100%;
+                        overflow: hidden;
+                      .provide-better-img{
+                          width: 100%;
+                      }
+                    }
+                }
+            }
+        }
+    }
 }
