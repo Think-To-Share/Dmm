@@ -35,3 +35,13 @@ if (document.querySelector('.provide-better-section')) {
         }
     })
 }
+if (document.querySelector('.testimonials-section')) {
+    tns({
+        container: '.testimonials-section .testimonials',
+        items: 1,
+        nav: false,
+        controls:false,
+        autoplay: true,
+        autoplayButtonOutput: false,
+    })
+}

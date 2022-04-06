@@ -37,10 +37,55 @@
                 background-position: top center;
             }
             .slide-main{
-                align-items: flex-end; 
+                // align-items: flex-end; 
                 height: 60vh;
-                display: flex;
+                // display: flex;
                 background-size: cover;
+                .hero-text{
+                    margin-top: 80px;
+                    width: 37%;
+                    background-color: #fff;
+                    margin-left: 182px;
+                    padding-left: 50px;
+                    padding-top: 61px;
+                    .hero-heading{
+                        font-family: $primary-font;
+                        font-weight: 500;
+                        @include font-size(3rem);
+                        color: #292f90;
+                        span{
+                            color: #0094df;
+                        }
+                    }
+                    .hero-heading-text{
+                        color: #7f8283;
+                        font-family: $primary-font;
+                        font-weight: 400;
+                        @include font-size(1.1rem);
+                        padding: 0;
+                    }
+                    .hero-btn-container{
+                        margin-top: 44px;
+                        padding-bottom: 50px;
+                        .hero-btn{
+                            text-decoration: none;
+                            text-align: center;
+                            color: #3b6275;
+                            background-color: $secondary-color;
+                            @include font-size(1.1rem);
+                            padding: 25px 45px;
+                            display: inline-block;
+                            font-family: $secondary-font;
+                            font-weight: 400;
+                            border:1px solid $secondary-color;
+                            transition: all 0.3s ease-in-out;
+                            &:hover{
+                                background-color: transparent;
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
             }      
         }   
     }
@@ -132,6 +177,69 @@
                 width: 61%;
             }
         }   
+    }
+}
+
+// Testimonals section                                                                                                                                 
+.testimonials-section{
+    margin-top: 50px;
+    .testimonials{
+        .testimonial{
+            background-position: bottom;
+            background-size:cover;
+            background-repeat: no-repeat;
+            .t-text{
+                background-color: $primary-color;
+                width: 40%;
+                margin-top: 229px;
+                padding-top: 50px;
+                border-radius: 20px;
+            .quote-img{
+                width: 34%;
+                padding-left: 19px;
+            }
+            .testimonial-text{ 
+                color: #fff;
+                font-family: $secondary-font;
+                font-weight: 300;
+                @include font-size(1.3rem);
+                text-align: center;
+            }
+            .testimonial-author-text{
+                color: #fff;
+                font-family: $secondary-font;
+                font-weight: 100;
+                @include font-size(0.9rem);
+                text-align: right;
+            }
+            } 
+        }
+    }
+    .testimonial-heading-text{
+        font-family: $primary-font;
+        font-weight: 500;
+        @include font-size(2.3rem);
+        background-image: linear-gradient(135deg, #1a1d4e 0%,#1a1d4e 31%,#1a1d4e 40%,#155b8d 64%,#0eb3e7 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        line-height: 1.4;
+    }
+    .hero-btn-container{
+        margin-top: 45px;
+        .hero-btn{
+            text-decoration: none;
+            text-align: center;
+            color: #939ab1;
+            background: linear-gradient(135deg, #1a1d4e 0%,#1a1d4e 31%,#1a1d4e 40%,#155b8d 64%,#0eb3e7 100%);
+            @include font-size(0.9rem);
+            padding: 8px 40px;
+            display: inline-block;
+            font-family: $secondary-font;
+            font-weight: 500;
+            border-radius: 37px;
+            transition: all 0.3s ease-in-out;
+        }  
     }
 }
 
