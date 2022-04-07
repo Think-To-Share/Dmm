@@ -1,5 +1,6 @@
 // header section
 .dmm-header {
+    margin-top: 15px;
     display: none;
     .logo-side {
         width: 188px;
@@ -36,7 +37,7 @@
                     font-weight: 400;
                     transition: color 0.3s ease-in-out;
                     &:hover {
-                        color:$secondary-color;
+                        color:#0094de;
                     }
                 }
             }
@@ -47,5 +48,89 @@
     }
     @media (min-width: 992px) {
         display: block;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        li{
+            list-style-type: none;
+            a{
+                svg{
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 100%;
+                }
+            }
+            &:first-child{
+                a{
+                    fill: #3c5b9b;
+                }
+            }
+            &:nth-child(2){
+                a{
+                    fill: #27a9e1;
+                    margin-left: 10px;
+                }
+            }
+            &:nth-child(3){
+                a{
+                    fill: #fe3432;
+                    margin-left: 10px;
+                }
+            }
+            &:last-child{
+                a{
+                    fill: #0173b2;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .f-text{
+        svg{
+            height: 22px;
+            width: 22px;
+            fill: #2d328f;
+        }
+        font-family: $secondary-font;
+        font-weight: 400;
+        color: #354f5c;
+        @include font-size(0.9rem);
+        a{
+            color: #2d3193;
+            font-family: $secondary-font;
+            font-weight: 500;
+            @include font-size(1rem);
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                text-decoration:none;
+                color: #0094de;
+            }
+        }
+    }
+    .career{
+        text-decoration: none;
+        font-family: $secondary-font;
+        font-weight: 500;
+        @include font-size(0.9rem);
+        color: #354f5c;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            text-decoration:underline;
+            color: #0094de;
+        }
+    }
+    .Faq{
+        text-decoration: none;
+        font-family: $secondary-font;
+        font-weight: 500;
+        @include font-size(0.9rem);
+        color: #354f5c;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            text-decoration:underline;
+            color: #0094de;
+        }
     }
 }

@@ -33,6 +33,57 @@
                  }
                
             }
+            .widget-content{
+                padding-top: 12px;
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        a{
+                            svg{
+                                height: 25px;
+                                width: 25px;
+                                border-radius: 100%;
+                            }
+                        }
+                        &:first-child{
+                            a{
+                                fill: #3c5b9b;
+                            }
+                        }
+                        &:nth-child(2){
+                            a{
+                                fill: #27a9e1;
+                                margin-left: 6px;
+                            }
+                        }
+                        &:nth-child(3){
+                            a{
+                                fill: #fe3432;
+                                margin-left: 6px;
+                            }
+                        }
+                        &:nth-child(4){
+                            a{
+                                fill: #0173b2;
+                                margin-left: 6px;
+                            }
+                        }
+                        &:nth-child(5){
+                            a{
+                                fill: #f73e29;
+                                margin-left: 6px;
+                            }
+                        }
+                        &:last-child{
+                            a{
+                                fill: #c60911;
+                                margin-left: 6px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }  
     .widget-heading{

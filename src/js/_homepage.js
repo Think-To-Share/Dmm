@@ -35,6 +35,7 @@ if (document.querySelector('.provide-better-section')) {
         }
     })
 }
+
 if (document.querySelector('.testimonials-section')) {
     tns({
         container: '.testimonials-section .testimonials',
@@ -43,5 +44,26 @@ if (document.querySelector('.testimonials-section')) {
         controls:false,
         autoplay: true,
         autoplayButtonOutput: false,
+    })
+}
+
+if (document.querySelector('.case-studies-section')) {
+    tns({
+        container: '.case-studies-section .slides',
+        items: 1,
+        nav: true,
+        gutter:10,
+        autoplay: true,
+        controls:false,
+        autoplayTimeout:3000,
+        autoplayButtonOutput: false,
+        responsive: {
+            576:{
+            items: 2,
+            },
+            992:{
+            items: 4,
+            },
+        }
     })
 }

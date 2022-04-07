@@ -91,6 +91,104 @@
     }
 }
 
+// Smart Integrated Facilities Management start
+.smart-integrated-section{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    .smart-integrated-heading{
+        font-family: $primary-font;
+        font-weight: 700;
+        color: $primary-color;
+        @include font-size(2rem);
+        text-transform: uppercase;
+        padding-bottom: 18px;
+    }
+    .smart-integrated-text{
+        font-family: $secondary-font;
+        font-weight: 400;
+        @include font-size(0.9rem);
+        color: #848586;
+        margin: 0;
+        line-height: 1.7;
+    }
+    .smart-integrated-btn-container{
+        margin-top: 30px;
+        .smart-integrated-btn{
+            text-decoration: none;
+            text-align: center;
+            color: #3b6275;
+            background-color: $secondary-color;
+            @include font-size(1.1rem);
+            padding: 8px 60px;
+            display: inline-block;
+            font-family: $secondary-font;
+            font-weight: 400;
+            border:1px solid $secondary-color;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// our-service-section start
+.our-service-section{
+    margin-bottom: 80px;
+    .our-service-section-heading{
+        font-family: $secondary-font;
+        font-weight: 600;
+        @include font-size(1.3rem);
+        color: #373d96;
+        text-decoration: underline;
+        text-decoration-color: $secondary-color;
+        text-underline-offset: 0.2em;
+    }
+    .service-offer-heading{
+        padding-top: 10px;
+        font-family: $primary-font;
+        font-weight: 700;
+        @include font-size(1.7rem);
+        color: #354f5c;
+        text-transform: capitalize;
+    }
+    .our-service-text{
+        font-family: $secondary-font;
+        font-weight: 400;
+        @include font-size(0.9rem);
+        color: #7f8283;
+        margin: 0;
+    }
+    .our-service-section-btn-container{
+        .our-service-section-btn{
+            text-decoration: none;
+            text-align: center;
+            color: #3b6275;
+            background-color: $secondary-color;
+            @include font-size(0.9rem);
+            padding: 8px 40px;
+            display: inline-block;
+            font-family: $secondary-font;
+            font-weight: 400;
+            border:1px solid $secondary-color;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                background-color: transparent;
+                color: $primary-color;
+            }
+        }
+    }
+    .image-section{
+        .image-container{
+            .img-fluid{
+                border-radius: 85px;
+                border: 3px solid $secondary-color;
+            }
+        }
+    }
+}
+
 // dmm-key-strength-section start
 .dmm-key-strength-section{
     .coloum-image{
@@ -148,6 +246,70 @@
     }
 }
 
+// case studies section start
+.case-studies-section{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    .tns-outer {
+        position: relative;
+        .tns-nav {
+            display: none;
+            justify-content: center;
+            position: absolute;
+            bottom: -39px;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            @media (min-width: 768px) {
+                display: flex;
+            }
+            button {
+                padding: 5px;
+                border: none;
+                background-color: change-color($color: $primary-color, $alpha: 0.5);
+                border-radius: 50%;
+                box-shadow: none;
+                margin-left: 18px;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &.tns-nav-active {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+    .case-studies-heading{
+        font-family: $primary-font;
+        font-weight: 700;
+        color: $primary-color;
+        @include font-size(1.8rem);
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .case-studies-heading-text{
+        font-family: $secondary-font;
+        font-weight: 700;
+        color: #7f8283;
+        @include font-size(0.9rem);
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 30px;
+    }
+    .slider-container{
+        .slides{
+            .slide{
+                .image-container{
+                    .provide-better-img{
+                        box-shadow: 1px 1px 9px 1px #7f8283d1;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // icon section
 .icon-section{
     background-image: url(../images/icon-bg.jpg);
@@ -183,6 +345,7 @@
 // Testimonals section                                                                                                                                 
 .testimonials-section{
     margin-top: 50px;
+    margin-bottom: 30px;
     .testimonials{
         .testimonial{
             background-position: bottom;
@@ -245,8 +408,8 @@
 
 // blog section
 .blog-section{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     .blog-heading-container{
         text-align: center;
         width: 100%;
@@ -347,6 +510,7 @@
                         width: 15px;
                         fill: $primary-color;
                         transition: transform 0.2s ease-in-out;
+                        margin-top: 4px;
                     }
                     &:hover{
                         svg{
@@ -367,10 +531,10 @@
             color: #ffffff;
             background-color: $secondary-color;
             @include font-size(0.9rem);
-            padding: 15px 45px;
+            padding: 10px 55px;
             display: inline-block;
             font-family: $secondary-font;
-            font-weight: 500;
+            font-weight: 400;
             border:1px solid $secondary-color;
             transition: all 0.3s ease-in-out;
             &:hover{
@@ -437,6 +601,171 @@
                     }
                 }
             }
+        }
+    }
+}
+
+// contact us section start
+.contact-us-section{
+    padding-top: 143px;
+    padding-bottom:62px;
+    margin-bottom: 80px;
+    background-image: url(../images/contact-us-bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    .coloum{
+        padding-left: 10px;
+        @media (min-width:992px) {
+            padding-left: 60px; 
+        }
+        .contact-us-form-text{
+            font-family: $primary-font;
+            font-weight: 700;
+            color: #1b1b1b;
+            @include font-size(4.1rem);
+            margin-top: 50px;
+        }
+        .contact-us-text{
+            font-family: $primary-font;
+            font-weight: 400;
+            color: #818890;
+            @include font-size(1.1rem);
+        }
+        .contact-card{
+            form{
+                input{
+                    width: 100%;
+                    @include padding-right(1.2rem);
+                    @include padding-left(1.2rem);
+                    @include padding-top(0.9rem);
+                    @include padding-bottom(0.9rem);
+                    border-radius: 15px;
+                    border: 1px solid #b0dffa;
+                    color: #15173f;
+                    outline: none;
+                    background-color: #b0dffa;
+                    @include font-size(1rem);
+                    &::placeholder{
+                        color: #15173f;
+                        font-family: $secondary-font;
+                        font-weight: 400;
+                    }
+                }
+                textarea{
+                    width: 100%;
+                    @include padding-right(1.2rem);
+                    @include padding-left(1.2rem);
+                    @include padding-top(0.9rem);
+                    border-radius: 15px;
+                    border: 1px solid #b0dffa;
+                    background-color: #b0dffa;
+                    @include font-size(1rem);
+                    outline: none;
+                    &::placeholder{
+                        color: #15173f;
+                        font-family: $secondary-font;
+                        font-weight: 400;
+                    }
+                }
+                .btn-container{
+                    margin-top: 25px;
+                    text-align: center;
+                    .btn-submit{
+                        text-decoration: none;
+                        text-align: center;
+                        color: #fff;
+                        background-color: #0eabde;
+                        @include font-size(1rem);
+                        padding: 5px 80px;
+                        display: inline-block;
+                        font-family: $secondary-font;
+                        font-weight: 400;
+                        border:1px solid #0eabde;
+                        text-transform: uppercase;
+                        transition: all 0.3s ease-in-out;
+                        &:hover{
+                            background-color: transparent;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contact-us-text{
+        color: #ffffff;
+        font-family: $secondary-font;
+        font-weight: 400;
+        @include font-size(1rem);
+        text-transform: uppercase;
+    }
+    .contact-us-heading-text{
+        color: #ffffff;
+        font-weight: 700;
+        font-family: $primary-font;
+        @include font-size(1.5rem);
+        padding-bottom: 37px;
+    }
+    .c-text{
+        color: #c9c9cb;
+        @include font-size(0.8rem);
+        font-weight: 400;
+        font-family: $secondary-font;
+        margin: 0;
+    }
+    .c-icon-box-text{
+        .business{
+         font-family: $secondary-font;
+         font-weight: 600;
+         color: #0eb3e7;
+         @include font-size(1.4rem);
+         margin: 0;
+        }
+        .email-add{
+            font-family: $secondary-font;
+            font-weight: 400;
+            color: #ffffff;
+            @include font-size(0.9rem);
+            margin: 0;
+            a{
+                text-decoration: none;
+                font-family: $secondary-font;
+                font-weight: 400;
+                color: #ffffff;
+                transition: all 0.4s ease-in-out;
+                @include font-size(0.9rem);
+                &:hover{
+                    opacity: 0.6;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .phone-no{
+            font-family: $secondary-font;
+            font-weight: 400;
+            color: #ffffff;
+            @include font-size(0.9rem);
+            margin: 0;
+            a{
+                text-decoration: none;
+                font-family: $secondary-font;
+                font-weight: 400;
+                color: #ffffff;
+                transition: all 0.4s ease-in-out;
+                @include font-size(0.9rem);
+                &:hover{
+                    opacity: 0.6;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .dmm-address{
+            font-family: $secondary-font;
+            font-weight: 400;
+            color: #ffffff;
+            @include font-size(0.9rem);
+            margin: 0;
         }
     }
 }
