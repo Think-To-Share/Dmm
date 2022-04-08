@@ -17,7 +17,7 @@ if (document.querySelector('.provide-better-section')) {
         container: '.provide-better-section .slides',
         items: 1,
         nav: false,
-        gutter:30,
+        gutter:40,
         autoplay: true,
         controls:false,
         autoplayTimeout:3000,

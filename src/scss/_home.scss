@@ -136,6 +136,7 @@
 // our-service-section start
 .our-service-section{
     margin-bottom: 80px;
+    position: relative;
     .our-service-section-heading{
         font-family: $secondary-font;
         font-weight: 600;
@@ -179,12 +180,104 @@
             }
         }
     }
-    .image-section{
-        .image-container{
-            .img-fluid{
-                border-radius: 85px;
-                border: 3px solid $secondary-color;
+    // .image-section{
+    //     .image-container{
+    //         .img-fluid{
+    //             border-radius: 85px;
+    //             border: 3px solid $secondary-color;
+    //         }
+    //     }
+    //     // .overlay{
+    //     //     width: 100%;
+    //     //     height: 317px;
+    //     //     background: rgba(0,0,0,.5);
+    //     //     position: absolute;
+    //     //     top: 0;
+    //     //     left: 0;
+    //     //     .top{
+    //     //         color: #fff;
+    //     //         position: absolute;
+    //     //         top: 50%;
+    //     //         left: 50%;
+    //     //         transform: translate(-50%,-50%);
+    //     //         text-align: center;
+    //     //         width: 70%;
+    //     //         transition: .5s;
+    //     //         .heading-text{
+
+    //     //         }
+    //     //     }
+    //     //     .bottom{
+    //     //         opacity: 0;
+    //     //         p{
+
+    //     //         }
+    //     //         .btn-default{
+
+    //     //         }
+    //     //     }
+    //     // }
+    // }
+    .image-section {
+        .overlay{
+            position: relative;
+            width: 100%;
+            height: 317px;
+            .top{
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                width: 70%;
+                transition:all .6s ease-in-out;
+                .h1{
+
+                }
             }
+            .bottom{
+                opacity: 0;
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                width: 70%;
+                transition:all .6s ease-in-out;
+                p{
+
+                }
+                .btn-default{
+                    background: 0 0;
+                    color: #fff;
+                    border: 2px solid #fff;
+                }
+            }
+            &:hover .top {
+                opacity: 0;
+            }
+            &:hover .bottom {
+                opacity: 1;
+            }
+        }
+        .overlay.shadow-box{
+            &:first-child{
+                background: url(../images/service-img-1.jpg) 50% no-repeat;
+            }
+            &:nth-child(2){
+                background: url(../images/service-img-1.jpg) 50% no-repeat;
+            }
+            &:last-child{
+                background: url(../images/service-img-1.jpg) 50% no-repeat;
+            }
+            background-size: cover;
+            height: 317px;
+            overflow: hidden;
+            padding: 0;
+            border-radius: 85px;
+            border: 3px solid $secondary-color;
         }
     }
 }
@@ -545,22 +638,61 @@
     } 
 }
 
+.dmm-provide-better-image{
+    .background-image-section{
+        background-image: url('../images/dmm-bg-img.jpg');
+        background-size: cover;
+        background-position: top left;
+        width: 100%;
+        height: 100%;
+    }
+}
 
 // provide-better-section
-.provide-better-section{    
+.provide-better-section{
+    position: relative; 
+    .background-review-section{
+        background-color: $primary-color;
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        @media(min-width: 776px){
+            height: 77%;
+        }
+    } 
+    .main-div{
+        z-index: 9999;
+        position: relative;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        .provide-better-heading{
+            font-family: $primary-font;
+            font-weight: 700;
+            color: #ffffff;
+            @include font-size(1.9rem);
+            // padding-left: 76px;
+        }
+        .provide-better-heading-text{
+            text-align: center;
+            font-family: $primary-font;
+            font-weight: 400;
+            color: #e6e8fc;
+            @include font-size(0.9rem);
+        }
+    }  
     .slider-container {
         position: relative;
-        padding: 0;
-        @media (min-width:768px) {
-            padding: 2rem 5rem;
-        }
+        // padding: 0;
+        // @media (min-width:768px) {
+        //     padding: 2rem 5rem;
+        // }
         .tns-outer{
             .tns-controls{
                     position: absolute;
                     z-index: 3;
                     transform: translate(-50% ,-50%);
                     top: 50%;
-                    width: 100%;
+                    width: 109%;
                     display: flex;
                     justify-content: space-between;
                     left: 50%;
