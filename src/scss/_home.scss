@@ -42,12 +42,17 @@
                 // display: flex;
                 background-size: cover;
                 .hero-text{
-                    margin-top: 80px;
-                    width: 37%;
+                    // width: 64%;
+                    margin-top: 50px;
                     background-color: #fff;
-                    margin-left: 182px;
+                    // // margin-left: 100px;
                     padding-left: 50px;
                     padding-top: 61px;
+                    // @media (min-width: 1200px){
+                    //     width: 37%;
+                    //     margin-left: 182px;
+                    //     margin-top: 80px;
+                    // }
                     .hero-heading{
                         font-family: $primary-font;
                         font-weight: 500;
@@ -73,7 +78,11 @@
                             color: #3b6275;
                             background-color: $secondary-color;
                             @include font-size(1.1rem);
-                            padding: 25px 45px;
+                             @include padding-top(1.2rem);
+                            @include padding-right(2.3rem);
+                            @include padding-bottom(1.2rem);
+                            @include padding-left(2.3rem);
+                            // padding: 25px 45px;
                             display: inline-block;
                             font-family: $secondary-font;
                             font-weight: 400;
@@ -138,6 +147,7 @@
     margin-bottom: 80px;
     position: relative;
     .our-service-section-heading{
+        text-align: center;
         font-family: $secondary-font;
         font-weight: 600;
         @include font-size(1.3rem);
@@ -145,6 +155,9 @@
         text-decoration: underline;
         text-decoration-color: $secondary-color;
         text-underline-offset: 0.2em;
+        @media (min-width:768px) {
+            text-align: left;
+        }
     }
     .service-offer-heading{
         padding-top: 10px;
@@ -153,6 +166,10 @@
         @include font-size(1.7rem);
         color: #354f5c;
         text-transform: capitalize;
+        text-align: center;
+        @media (min-width:768px) {
+            text-align: left;
+        }
     }
     .our-service-text{
         font-family: $secondary-font;
@@ -160,15 +177,28 @@
         @include font-size(0.9rem);
         color: #7f8283;
         margin: 0;
+        text-align: center;
+        @media (min-width:768px) {
+            text-align: left;
+        }
     }
     .our-service-section-btn-container{
+        text-align: center;
+        margin-top: 15px;
+            @media (min-width:768px) {
+                text-align: left;
+                margin-top: 0;
+            }
         .our-service-section-btn{
             text-decoration: none;
             text-align: center;
             color: #3b6275;
             background-color: $secondary-color;
-            @include font-size(0.9rem);
-            padding: 8px 40px;
+            @include padding-top(0.7rem);
+            @include padding-right(2.3rem);
+            @include padding-bottom(0.7rem);
+            @include padding-left(2.3rem);
+            @include font-size(0.8rem);
             display: inline-block;
             font-family: $secondary-font;
             font-weight: 400;
@@ -180,44 +210,6 @@
             }
         }
     }
-    // .image-section{
-    //     .image-container{
-    //         .img-fluid{
-    //             border-radius: 85px;
-    //             border: 3px solid $secondary-color;
-    //         }
-    //     }
-    //     // .overlay{
-    //     //     width: 100%;
-    //     //     height: 317px;
-    //     //     background: rgba(0,0,0,.5);
-    //     //     position: absolute;
-    //     //     top: 0;
-    //     //     left: 0;
-    //     //     .top{
-    //     //         color: #fff;
-    //     //         position: absolute;
-    //     //         top: 50%;
-    //     //         left: 50%;
-    //     //         transform: translate(-50%,-50%);
-    //     //         text-align: center;
-    //     //         width: 70%;
-    //     //         transition: .5s;
-    //     //         .heading-text{
-
-    //     //         }
-    //     //     }
-    //     //     .bottom{
-    //     //         opacity: 0;
-    //     //         p{
-
-    //     //         }
-    //     //         .btn-default{
-
-    //     //         }
-    //     //     }
-    //     // }
-    // }
     .image-section {
         .overlay{
             position: relative;
@@ -233,7 +225,12 @@
                 width: 70%;
                 transition:all .6s ease-in-out;
                 .h1{
-
+                    font-family: $secondary-font;
+                    font-weight: 600;
+                    color: #ffffff;
+                    @include font-size(1.5rem);
+                    text-decoration: underline;
+                    line-height: 1.3;
                 }
             }
             .bottom{
@@ -247,7 +244,10 @@
                 width: 70%;
                 transition:all .6s ease-in-out;
                 p{
-
+                    font-family: $secondary-font;
+                    font-weight: 300;
+                    color: #ffffff;
+                    @include font-size(0.9rem);
                 }
                 .btn-default{
                     background: 0 0;
@@ -260,24 +260,17 @@
             }
             &:hover .bottom {
                 opacity: 1;
+                // transform: translate(-50%,-50%);
             }
         }
         .overlay.shadow-box{
-            &:first-child{
-                background: url(../images/service-img-1.jpg) 50% no-repeat;
-            }
-            &:nth-child(2){
-                background: url(../images/service-img-1.jpg) 50% no-repeat;
-            }
-            &:last-child{
-                background: url(../images/service-img-1.jpg) 50% no-repeat;
-            }
             background-size: cover;
             height: 317px;
             overflow: hidden;
             padding: 0;
             border-radius: 85px;
             border: 3px solid $secondary-color;
+            margin-top: 15px;
         }
     }
 }
@@ -285,18 +278,23 @@
 // dmm-key-strength-section start
 .dmm-key-strength-section{
     .coloum-image{
+        @media (min-width:992px) {
         background-image: url(../images/key-strength-bg.jpg);
         background-position: bottom;
         background-size: 478px 438px;
         background-position-y: center;
         background-position-x: left;
         background-repeat: no-repeat;
+        }
         .key-strength-heading{
             color: $primary-color;
             font-weight: 700;
             font-family: $primary-font;
             @include font-size(2.3rem);
-            margin-top: 500px;
+            margin-top: 0;
+            @media (min-width:992px){
+                margin-top: 500px;
+            }
         }
         .slide{
             .carousel-inner{
@@ -324,6 +322,10 @@
     .image-container{
         // display: flex;
         img{
+            width: 65%;
+            @media (min-width:992px){
+              width: 100%;  
+            }
             margin: 0 auto;
             display: flex;
         }
@@ -376,7 +378,7 @@
         font-family: $primary-font;
         font-weight: 700;
         color: $primary-color;
-        @include font-size(1.8rem);
+        @include font-size(1.9rem);
         text-align: center;
         text-transform: uppercase;
     }
@@ -394,8 +396,9 @@
         .slides{
             .slide{
                 .image-container{
-                    .provide-better-img{
+                    .case-studies-img{
                         box-shadow: 1px 1px 9px 1px #7f8283d1;
+                        width: 100%;
                     }
                 }
             }
@@ -408,22 +411,25 @@
     background-image: url(../images/icon-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     .icon-heading{
-        padding-top: 50px;
+        padding-top: 73px;
         text-align: center;
         font-family: $secondary-font;
-        font-family:400;
+        font-weight:400;
         @include font-size(1.7rem);
         color: #ffffff;
+        text-transform: capitalize;
         span{
             font-family: $primary-font;
-            font-family: 700;
+            font-weight: 700;
             color: $secondary-color;
-            @include font-size(2.2rem);
+            @include font-size(2.4rem);
+            text-transform: uppercase;
         }
     }
     .col{
-        padding: 38px 0;
+        padding: 55px 0 100px 0;
         .icon-img{
             width: 87%;
             display: block;
@@ -527,6 +533,11 @@
     }
     .blog-text{
         text-decoration: none;
+        margin-bottom: 31px;
+        @media (min-width:768px) {
+            margin-bottom: 0;
+            
+        }
         .card{
             border: none;
             box-shadow: 0px 1px 14px 6px #e5e5e5;
@@ -638,13 +649,18 @@
     } 
 }
 
+// bg-image section
 .dmm-provide-better-image{
     .background-image-section{
-        background-image: url('../images/dmm-bg-img.jpg');
-        background-size: cover;
-        background-position: top left;
+        // background-size: cover;
+        // background-position: top left;
         width: 100%;
         height: 100%;
+        background-repeat: no-repeat;
+        img{
+            display: flex;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -670,7 +686,10 @@
             font-weight: 700;
             color: #ffffff;
             @include font-size(1.9rem);
-            // padding-left: 76px;
+            text-align: center;
+            @media (min-width:768px) {
+                text-align: left;
+            }
         }
         .provide-better-heading-text{
             text-align: center;
@@ -720,7 +739,6 @@
             }
         
         }
-
         .slides{
             .slide{
                 .better-main{
@@ -739,30 +757,26 @@
 
 // contact us section start
 .contact-us-section{
-    padding-top: 143px;
+    padding-top: 32px;
     padding-bottom:62px;
     margin-bottom: 80px;
     background-image: url(../images/contact-us-bg-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+    @media (min-width:768px){
+        padding-top: 143px;  
+    }
+    .coloum-text{
+        text-align: center;
+        @media (min-width:768px) {
+            text-align: left;
+        }
+    }
     .coloum{
         padding-left: 10px;
         @media (min-width:992px) {
             padding-left: 60px; 
-        }
-        .contact-us-form-text{
-            font-family: $primary-font;
-            font-weight: 700;
-            color: #1b1b1b;
-            @include font-size(4.1rem);
-            margin-top: 50px;
-        }
-        .contact-us-text{
-            font-family: $primary-font;
-            font-weight: 400;
-            color: #818890;
-            @include font-size(1.1rem);
         }
         .contact-card{
             form{
@@ -836,7 +850,7 @@
         color: #ffffff;
         font-weight: 700;
         font-family: $primary-font;
-        @include font-size(1.5rem);
+        @include font-size(1.8rem);
         padding-bottom: 37px;
     }
     .c-text{

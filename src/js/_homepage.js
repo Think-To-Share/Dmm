@@ -50,19 +50,19 @@ if (document.querySelector('.testimonials-section')) {
 if (document.querySelector('.case-studies-section')) {
     tns({
         container: '.case-studies-section .slides',
-        items: 1,
+        items: 2,
         nav: true,
-        gutter:10,
+        gutter:35,
         autoplay: true,
         controls:false,
         autoplayTimeout:3000,
         autoplayButtonOutput: false,
         responsive: {
-            576:{
-            items: 2,
-            },
+            // 576:{
+            // items: 2,
+            // },
             992:{
-            items: 4,
+            items: 3,
             },
         }
     })
