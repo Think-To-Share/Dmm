@@ -46,6 +46,12 @@
             display: block;
         }
     }
+    .blank-colum{
+        display: none;
+        @media (min-width: 1200px) {
+            display: block;
+        }
+    }
     @media (min-width: 992px) {
         display: block;
     }

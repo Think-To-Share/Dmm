@@ -443,72 +443,165 @@
 
 // Testimonals section                                                                                                                                 
 .testimonials-section{
-    margin-top: 50px;
-    margin-bottom: 30px;
-    .testimonials{
-        .testimonial{
-            background-position: bottom;
-            background-size:cover;
-            background-repeat: no-repeat;
-            .t-text{
-                background-color: $primary-color;
-                width: 40%;
-                margin-top: 229px;
-                padding-top: 50px;
-                border-radius: 20px;
-            .quote-img{
-                width: 34%;
-                padding-left: 19px;
-            }
-            .testimonial-text{ 
-                color: #fff;
-                font-family: $secondary-font;
-                font-weight: 300;
-                @include font-size(1.3rem);
-                text-align: center;
-            }
-            .testimonial-author-text{
-                color: #fff;
-                font-family: $secondary-font;
-                font-weight: 100;
-                @include font-size(0.9rem);
-                text-align: right;
-            }
-            } 
+    margin-top: 90px;
+    margin-bottom: 80px;
+    position: relative;
+    .testimonial-text-main{
+        background-color: $primary-color;
+        border-radius: 20px;
+        padding: 25px 40px;
+        position: absolute;
+        left: 12%;
+        bottom: -10%;
+        display: none;
+        @media (min-width: 992px) {
+            display: block;
+        }
+        .quote-img{
+            padding-bottom: 13px;
+        }
+        .testimonial-text{ 
+            color: #fff;
+            font-family: $secondary-font;
+            font-weight: 300;
+            @include font-size(1.3rem);
+           text-align: center;
+           span{
+            color: #fff;
+            font-family: $secondary-font;
+            font-weight: 100;
+            @include font-size(0.9rem);
+            text-align: right;
+           }
+        }
+        .testimonial-author-text{
+            color: #fff;
+            font-family: $secondary-font;
+            font-weight: 100;
+            @include font-size(0.9rem);
+            text-align: right;
+            margin: 0;
+           
         }
     }
-    .testimonial-heading-text{
-        font-family: $primary-font;
-        font-weight: 500;
-        @include font-size(2.3rem);
-        background-image: linear-gradient(135deg, #1a1d4e 0%,#1a1d4e 31%,#1a1d4e 40%,#155b8d 64%,#0eb3e7 100%);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-transform: uppercase;
-        line-height: 1.4;
+    .testimonial-box-sec{
+        margin-bottom: 50px;
+        .testimonial-box{
+            .slides{
+                .slide{
+                    background-color: $primary-color;
+                    border-radius: 20px;
+                    padding: 25px 40px;
+                    margin-top: 45px;
+                    .testimonial-text{
+                        color: #fff;
+                        font-family: $secondary-font;
+                        font-weight: 300;
+                        @include font-size(1.3rem);
+                       text-align: center;
+                       span{
+                        color: #fff;
+                        font-family: $secondary-font;
+                        font-weight: 100;
+                        @include font-size(0.9rem);
+                        text-align: right;
+                       } 
+        
+                    }
+                }
+            }
+        }
+        @media (min-width: 992px){
+            display: none;
+        }
     }
-    .hero-btn-container{
-        margin-top: 45px;
-        .hero-btn{
-            text-decoration: none;
-            text-align: center;
-            color: #939ab1;
-            background: linear-gradient(135deg, #1a1d4e 0%,#1a1d4e 31%,#1a1d4e 40%,#155b8d 64%,#0eb3e7 100%);
-            @include font-size(0.9rem);
-            padding: 8px 40px;
-            display: inline-block;
-            font-family: $secondary-font;
+    .tns-outer {
+        position: relative;
+        .tns-nav {
+            display: none;
+            justify-content: center;
+            position: absolute;
+            bottom: -28px; 
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            @media (min-width: 768px) {
+                display: flex;
+            }
+            @media (min-width: 992px){
+                bottom: -100px;   
+            }
+            button {
+                padding: 5px;
+                border: none;
+                background-color: change-color($color: $secondary-color, $alpha: 0.5);
+                border-radius: 50%;
+                box-shadow: none;
+                margin-left: 15px;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &.tns-nav-active {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+    .t-head{
+        @media (min-width: 992px){
+            padding-top: 10%;
+        }
+        .testimonial-heading-text{
+            font-family: $primary-font;
             font-weight: 500;
-            border-radius: 37px;
-            transition: all 0.3s ease-in-out;
-        }  
+            @include font-size(2.5rem);
+            background-image: linear-gradient(135deg, #1a1d4e 0%,#1a1d4e 31%,#1a1d4e 40%,#155b8d 64%,#0eb3e7 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+        .hero-btn-container{
+            margin-top: 45px;
+            .hero-btn{
+                text-decoration: none;
+                text-align: center;
+                color: #939ab1;
+                background: linear-gradient(135deg, #1a1d4e 0%,#1a1d4e 31%,#1a1d4e 40%,#155b8d 64%,#0eb3e7 100%);
+                @include font-size(0.9rem);
+                padding: 8px 40px;
+                display: inline-block;
+                font-family: $secondary-font;
+                font-weight: 500;
+                border-radius: 37px;
+                &:hover{
+                    animation: pulse 1s infinite;
+                    transition: .3s;
+                }
+            }  
+        }
+        @keyframes pulse {
+            0% {
+              transform: scale(1);
+            }
+            70% {
+              transform: scale(.9);
+            }
+              100% {
+              transform: scale(1);
+            }
+          }
     }
+    
 }
 
 // blog section
 .blog-section{
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 8px;
+      margin-bottom: 80px;
+    @media (min-width: 992px) {
+        margin-top: 200px;
+    }
     .blog-heading-container{
         text-align: center;
         width: 100%;
