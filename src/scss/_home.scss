@@ -37,10 +37,9 @@
                 background-position: top center;
             }
             .slide-main{
-                // align-items: flex-end; 
-                height: 60vh;
-                // display: flex;
+                min-height: 60vh;
                 background-size: cover;
+                padding-bottom: 37px;
                 .hero-text{
                     // width: 64%;
                     margin-top: 50px;
@@ -75,7 +74,7 @@
                         .hero-btn{
                             text-decoration: none;
                             text-align: center;
-                            color: #3b6275;
+                            color: #fff;
                             background-color: $secondary-color;
                             @include font-size(1.1rem);
                              @include padding-top(1.2rem);
@@ -90,7 +89,7 @@
                             transition: all 0.3s ease-in-out;
                             &:hover{
                                 background-color: transparent;
-                                color: $primary-color;
+                                color: $secondary-color;
                             }
                         }
                     }
@@ -126,7 +125,7 @@
         .smart-integrated-btn{
             text-decoration: none;
             text-align: center;
-            color: #3b6275;
+            color: #fff;
             background-color: $secondary-color;
             @include font-size(1.1rem);
             padding: 8px 60px;
@@ -137,7 +136,7 @@
             transition: all 0.3s ease-in-out;
             &:hover{
                 background-color: transparent;
-                color: $primary-color;
+                color: $secondary-color;
             }
         }
     }
@@ -196,7 +195,7 @@
         .our-service-section-btn{
             text-decoration: none;
             text-align: center;
-            color: #3b6275;
+            color: #fff;
             background-color: $secondary-color;
             @include padding-top(0.7rem);
             @include padding-right(2.3rem);
@@ -210,7 +209,7 @@
             transition: all 0.3s ease-in-out;
             &:hover{
                 background-color: transparent;
-                color: $primary-color;
+                color: $secondary-color;
             }
         }
     }
@@ -310,6 +309,7 @@
                         @include font-size(1.7rem);
                         margin-top: 10px;
                         margin-bottom: 10px;
+                        text-transform: uppercase;
                     }
                     .key-strength-text{
                         font-family: $secondary-font;
@@ -341,7 +341,7 @@
         }
     }
     .carousel-indicators [data-bs-target]{
-        height: 1px;
+        height: 2px;
     }
 }
 
@@ -349,6 +349,7 @@
 .case-studies-section{
     margin-top: 50px;
     margin-bottom: 80px;
+    
     .tns-outer {
         position: relative;
         .tns-nav {
@@ -385,7 +386,23 @@
         @include font-size(1.9rem);
         text-align: center;
         text-transform: uppercase;
+        position: relative;
+        padding-bottom: 9px;
+        margin-bottom: 23px;
+        &::before {
+        content: "";
+        display: block;
+        width: 114px;
+        height: 5px;
+        background: $primary-color;
+        left: 50%;
+        bottom: 0;
+        position: absolute;
+        transform: translateX(-50%);
+       
+      }
     }
+    
     .case-studies-heading-text{
         font-family: $secondary-font;
         font-weight: 700;
@@ -432,10 +449,13 @@
             text-transform: uppercase;
         }
     }
-    .col{
-        padding: 55px 0 100px 0;
+    .column-icon{
+        padding: 10px 0 20px 0;
+        @media (min-width:768px){
+            padding: 55px 0 100px 0;
+        }
         .icon-img{
-            width: 87%;
+            width:50%;
             display: block;
             margin: 0 auto;
             @media (min-width:768px){
@@ -458,6 +478,7 @@
         left: 12%;
         bottom: -10%;
         display: none;
+        overflow: hidden;
         @media (min-width: 992px) {
             display: block;
         }
@@ -615,10 +636,11 @@
             font-family: $primary-font;
             @include font-size(1.3rem);
             font-weight: 500;
-            background-color: $secondary-color;
-            padding: 10px 35px;
+            background-color: #a3daff;
+            padding: 21px 35px;
             display: inline-block;
             border-radius: 50px;
+            line-height: 0;
         }
     }
     .blog-heading-text{
@@ -740,7 +762,7 @@
             transition: all 0.3s ease-in-out;
             &:hover{
                 background-color: transparent;
-                color: $primary-color;
+                color: $secondary-color;
             }
         }
     } 
@@ -822,6 +844,10 @@
                     border: none;
                     background: #515378;
                     color: #fff;
+                    display: none;
+                    @media (min-width:992px) {
+                        display: block;   
+                    }
                     svg{
                         fill: $primary-color;
                         height: 20px;
@@ -831,7 +857,7 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%,-50%);
-                    }
+                    }  
                 }
             }
         
@@ -855,7 +881,7 @@
 // contact us section start
 .contact-us-section{
     padding-top: 32px;
-    padding-bottom:62px;
+    padding-bottom:25px;
     margin-bottom: 80px;
     background-image: url(../images/contact-us-bg-image.jpg);
     background-repeat: no-repeat;
@@ -876,6 +902,10 @@
             padding-left: 60px; 
         }
         .contact-card{
+            @media (min-width:992px){
+              margin-top: 122px;  
+            }
+            
             form{
                 input{
                     width: 100%;
@@ -920,7 +950,7 @@
                         color: #fff;
                         background-color: #0eabde;
                         @include font-size(1rem);
-                        padding: 5px 80px;
+                        padding: 7px 111px;
                         display: inline-block;
                         font-family: $secondary-font;
                         font-weight: 400;
@@ -947,7 +977,11 @@
         color: #ffffff;
         font-weight: 700;
         font-family: $primary-font;
-        @include font-size(1.8rem);
+        @include font-size(2.3rem);
+        // padding-bottom: 37px;
+    }
+    .aquarius-img{
+        width: 39%;
         padding-bottom: 37px;
     }
     .c-text{
@@ -957,7 +991,31 @@
         font-family: $secondary-font;
         margin: 0;
     }
+    .c-icon-box{
+        height: 80px;
+        width: 80px;
+        background-color: #b0dffa;
+        position: relative;
+        display: inline-block;
+        border-radius: 100%;
+      svg{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $primary-color;
+        }  
+    }
     .c-icon-box-text{
+        padding-left:0;
+        @media (min-width:992px) {
+            padding-left: 18px;
+        }
+        @media (min-width:1200px) {
+            padding-left: 0;
+        }
         .business{
          font-family: $secondary-font;
          font-weight: 600;

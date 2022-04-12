@@ -1,12 +1,11 @@
 // header section
 .dmm-header {
     margin-top: 15px;
-    display: none;
     .logo-side {
         width: 188px;
         img {
             display: none;
-            @media (min-width: 768px) {
+            @media (min-width: 992px) {
                 display: block;
                 width: 100%;
                 margin:0 auto;
@@ -42,7 +41,7 @@
                 }
             }
         }
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             display: block;
         }
     }
@@ -51,9 +50,6 @@
         @media (min-width: 1200px) {
             display: block;
         }
-    }
-    @media (min-width: 992px) {
-        display: block;
     }
     .header-icon{
         margin: 0;
@@ -72,7 +68,10 @@
                 position: relative;
                 display: inline-block;
                 border-radius: 100%;
-
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    background-color: #000 !important; 
+                }
                 svg{
                     height: 15px;
                     width: 15px;
@@ -121,6 +120,10 @@
         }
     }
     .f-text{
+        text-align: center;
+        @media (min-width: 992px) {
+            text-align: left;
+        }
         svg{
             height: 22px;
             width: 22px;
@@ -149,9 +152,13 @@
         @include font-size(0.9rem);
         color: #354f5c;
         transition: all 0.3s ease-in-out;
+        display:none;
         &:hover{
             text-decoration:underline;
             color: #0094de;
+        }
+        @media (min-width: 992px) {
+        display: block;
         }
     }
     .Faq{
@@ -161,9 +168,13 @@
         @include font-size(0.9rem);
         color: #354f5c;
         transition: all 0.3s ease-in-out;
+        display:none;
         &:hover{
             text-decoration:underline;
             color: #0094de;
+        }
+        @media (min-width: 992px) {
+        display: block;
         }
     }
 }
