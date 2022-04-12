@@ -111,6 +111,7 @@
         @include font-size(2rem);
         text-transform: uppercase;
         padding-bottom: 18px;
+        margin-top: 52px;
     }
     .smart-integrated-text{
         font-family: $secondary-font;
@@ -139,6 +140,9 @@
                 color: $primary-color;
             }
         }
+    }
+    .smart-img{
+        width: 100%;
     }
 }
 
