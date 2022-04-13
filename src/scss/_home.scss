@@ -413,6 +413,12 @@
         padding: 0;
         padding-bottom: 30px;
     }
+    .case-studies-heading-text.hide{
+        display: none;
+    }
+    .case-studies-heading-text.active{
+        display: block;
+    }
     .slider-container{
         .slides{
             .slide{

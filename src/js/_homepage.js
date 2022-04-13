@@ -88,7 +88,7 @@ if (document.querySelector('.testimonial-box-sec')) {
 }
 
 if (document.querySelector('.case-studies-section')) {
-    tns({
+    const slider = tns({
         container: '.case-studies-section .slides',
         items: 2,
         nav: true,
@@ -97,13 +97,25 @@ if (document.querySelector('.case-studies-section')) {
         controls:false,
         autoplayTimeout:3000,
         autoplayButtonOutput: false,
+        mouseDrag: true,
+        center:true,
         responsive: {
-            // 576:{
-            // items: 2,
-            // },
             992:{
             items: 3,
             },
         }
     })
+
+    // document.querySelectorAll('.main-text-area .text-area p').forEach(p => {
+    //     p.classList.add('hide')
+    // });
+    
+    slider.events.on('indexChanged', (info) => {
+    document.querySelectorAll('.case-studies-section .slider-container .slides .slide p').forEach(slide => {
+        slide.style.opacity = '0'
+    });
+        const activeSlide = info.slideItems[info.index];
+        activeSlide.querySelector('p').style.opacity = '1'
+    })
 }
+
