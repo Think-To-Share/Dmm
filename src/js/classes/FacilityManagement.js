@@ -12,6 +12,7 @@ export class FacilityManagement {
     init() {
         this.hideTexts()
         this.initializePixi()
+        this.addActiveShape()
         this.addBackground()
         this.addIcons()
         this.loadElements()
@@ -35,7 +36,7 @@ export class FacilityManagement {
             resolution: 2,
         })
         this.pixiContainerElem.appendChild(this.app.view)
-        this.app.stage.interactive = true;
+        this.app.stage.sortableChildren = true;
         this.app.renderer.addSystem(EventSystem, 'events');
     }
 
@@ -78,6 +79,7 @@ export class FacilityManagement {
         this.active_shape.beginFill(0x1a1d4e)
         this.active_shape.drawPolygon(this.getPolygonNodes(24, 27, 134, 170))
         this.active_shape.endFill()
+        this.active_shape.zIndex = 1
         this.app.stage.addChild(this.active_shape)
     }
 
@@ -97,8 +99,6 @@ export class FacilityManagement {
             bg.x = 0;
             bg.y = 0;
             this.app.stage.addChild(bg);
-
-            this.addActiveShape()
 
             const icon_1 = new PIXI.Sprite(res.icon_1.texture)
             icon_1.x = 45;
@@ -168,6 +168,7 @@ export class FacilityManagement {
         icons.forEach((icon, index) => {
             icon.interactive = true;
             icon.buttonMode = true;
+            icon.zIndex = 1
 
             icon.addEventListener('pointerdown', _ => {
                 this.textContents.forEach(elem => {
