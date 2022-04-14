@@ -8599,7 +8599,7 @@ if (document.querySelector(".testimonial-box-sec")) {
 if (document.querySelector(".case-studies-section")) {
     var slider = (0,tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__.tns)({
         container: ".case-studies-section .slides",
-        items: 2,
+        items: 1,
         nav: true,
         gutter: 35,
         autoplay: true,
@@ -8609,7 +8609,7 @@ if (document.querySelector(".case-studies-section")) {
         mouseDrag: true,
         center: true,
         responsive: {
-            992: {
+            576: {
                 items: 3
             }
         }

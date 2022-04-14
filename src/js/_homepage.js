@@ -90,7 +90,7 @@ if (document.querySelector('.testimonial-box-sec')) {
 if (document.querySelector('.case-studies-section')) {
     const slider = tns({
         container: '.case-studies-section .slides',
-        items: 2,
+        items: 1,
         nav: true,
         gutter:35,
         autoplay: true,
@@ -100,7 +100,7 @@ if (document.querySelector('.case-studies-section')) {
         mouseDrag: true,
         center:true,
         responsive: {
-            992:{
+            576:{
             items: 3,
             },
         }
