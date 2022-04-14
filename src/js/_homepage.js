@@ -1,4 +1,5 @@
 import { tns } from 'tiny-slider/src/tiny-slider'
+import { FacilityManagement } from './classes/FacilityManagement'
 
 if (document.querySelector('.dmm-hero-section')) {
     tns({
@@ -90,7 +91,7 @@ if (document.querySelector('.testimonial-box-sec')) {
 if (document.querySelector('.case-studies-section')) {
     const slider = tns({
         container: '.case-studies-section .slides',
-        items: 1,
+        items: 2,
         nav: true,
         gutter:35,
         autoplay: true,
@@ -109,13 +110,22 @@ if (document.querySelector('.case-studies-section')) {
     // document.querySelectorAll('.main-text-area .text-area p').forEach(p => {
     //     p.classList.add('hide')
     // });
+
+    const case_studies_texts = document.querySelectorAll('.case-studies-section .sub-heading .text')
+    case_studies_texts.forEach(text => {
+        text.classList.add('hide');
+    })
+
+    // First slide should be active first
+    const active_index = slider.getInfo().index
+    case_studies_texts[active_index % case_studies_texts.length].classList.remove('hide')
     
     slider.events.on('indexChanged', (info) => {
-    document.querySelectorAll('.case-studies-section .slider-container .slides .slide p').forEach(slide => {
-        slide.style.opacity = '0'
-    });
-        const activeSlide = info.slideItems[info.index];
-        activeSlide.querySelector('p').style.opacity = '1'
+        case_studies_texts.forEach(text => text.classList.add('hide'))
+
+        case_studies_texts[info.index % case_studies_texts.length].classList.remove('hide')
     })
+
+    new FacilityManagement().init();
 }
 

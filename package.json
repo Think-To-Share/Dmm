@@ -31,8 +31,11 @@
     "last 3 iOS versions"
   ],
   "dependencies": {
+    "@pixi/events": "^6.3.0",
+    "@pixi/graphics-extras": "^6.3.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.1",
+    "pixi.js": "^6.3.0",
     "rfs": "^9.0.6",
     "tiny-slider": "^2.9.4"
   }

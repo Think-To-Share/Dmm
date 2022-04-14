@@ -140,8 +140,11 @@
             }
         }
     }
-    .smart-img{
-        width: 100%;
+    
+    .pixi-container {
+        canvas {
+            width: 100%;
+        }
     }
 }
 
@@ -402,23 +405,24 @@
        
       }
     }
-    
-    .case-studies-heading-text{
-        font-family: $secondary-font;
-        font-weight: 700;
-        color: #7f8283;
-        @include font-size(0.9rem);
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        padding-bottom: 30px;
+
+    .sub-heading {
+        .text {
+            font-family: $secondary-font;
+            font-weight: 700;
+            color: #7f8283;
+            @include font-size(0.9rem);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 30px;
+
+            &.hide {
+                display: none;
+            }
+        }
     }
-    .case-studies-heading-text.hide{
-        display: none;
-    }
-    .case-studies-heading-text.active{
-        display: block;
-    }
+
     .slider-container{
         .slides{
             .slide{
