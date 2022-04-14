@@ -52074,7 +52074,6 @@ var FacilityManagement = /*#__PURE__*/ function() {
                 this.hideTexts();
                 this.initializePixi();
                 this.addBackground();
-                // this.addActiveShape()
                 this.addIcons();
                 this.loadElements();
             }
@@ -52096,7 +52095,9 @@ var FacilityManagement = /*#__PURE__*/ function() {
                 this.app = new pixi_js__WEBPACK_IMPORTED_MODULE_0__.Application({
                     backgroundColor: 16777215,
                     width: 724,
-                    height: 541
+                    height: 541,
+                    antialias: true,
+                    resolution: 2
                 });
                 this.pixiContainerElem.appendChild(this.app.view);
                 this.app.stage.interactive = true;
@@ -52112,23 +52113,23 @@ var FacilityManagement = /*#__PURE__*/ function() {
                 ];
                 var Point2 = [
                     x + width,
-                    y + height * 0.3
+                    y + height * 0.247
                 ];
                 var Point3 = [
                     x + width,
-                    y + height * 0.7
+                    y + height * 0.73
                 ];
                 var Point4 = [
-                    x + width * 0.5,
+                    x + width * 0.47,
                     y + height
                 ];
                 var Point5 = [
                     x,
-                    y + height * 0.7
+                    y + height * 0.76
                 ];
                 var Point6 = [
                     x,
-                    y + height * 0.3
+                    y + height * 0.25
                 ];
                 return _toConsumableArray(Point1).concat(_toConsumableArray(Point2), _toConsumableArray(Point3), _toConsumableArray(Point4), _toConsumableArray(Point5), _toConsumableArray(Point6));
             }
@@ -52136,11 +52137,11 @@ var FacilityManagement = /*#__PURE__*/ function() {
         {
             key: "addActiveShape",
             value: function addActiveShape() {
-                var shape = new pixi_js__WEBPACK_IMPORTED_MODULE_0__.Graphics();
-                shape.beginFill(1711438);
-                shape.drawPolygon(this.getPolygonNodes(20, 30, 140, 150));
-                shape.endFill();
-                this.app.stage.addChild(shape);
+                this.active_shape = new pixi_js__WEBPACK_IMPORTED_MODULE_0__.Graphics();
+                this.active_shape.beginFill(1711438);
+                this.active_shape.drawPolygon(this.getPolygonNodes(24, 27, 134, 170));
+                this.active_shape.endFill();
+                this.app.stage.addChild(this.active_shape);
             }
         },
         {
@@ -52230,13 +52231,31 @@ var FacilityManagement = /*#__PURE__*/ function() {
                     var _this1 = _this;
                     icon.interactive = true;
                     icon.buttonMode = true;
-                    icon.on("click", function(_) {
+                    icon.addEventListener("pointerdown", function(_) {
                         _this1.textContents.forEach(function(elem) {
                             elem.style.display = "none";
                         });
                         _this1.textContents[index].style.display = "block";
+                        _this1.setIconActiveShapePosition(index);
                     });
                 });
+            }
+        },
+        {
+            key: "setIconActiveShapePosition",
+            value: function setIconActiveShapePosition(index) {
+                switch(index){
+                    case 0:
+                        this.active_shape.x = 0;
+                        this.active_shape.y = 0;
+                        break;
+                    case 1:
+                        this.active_shape.x = 157;
+                        this.active_shape.y = 4.5;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     ]);

@@ -13,7 +13,6 @@ export class FacilityManagement {
         this.hideTexts()
         this.initializePixi()
         this.addBackground()
-        // this.addActiveShape()
         this.addIcons()
         this.loadElements()
     }
@@ -32,6 +31,8 @@ export class FacilityManagement {
             backgroundColor: 0xffffff,
             width: 724,
             height: 541,
+            antialias: true,
+            resolution: 2,
         })
         this.pixiContainerElem.appendChild(this.app.view)
         this.app.stage.interactive = true;
@@ -46,38 +47,38 @@ export class FacilityManagement {
 
         const Point2 = [
             x + width,
-            y + (height * 0.3)
+            y + (height * 0.247)
         ]
 
         const Point3 = [
             x + width,
-            y + (height * 0.7)
+            y + (height * 0.73)
         ]
 
         const Point4 = [
-            x + (width * 0.5),
+            x + (width * 0.47),
             y + height
         ]
 
         const Point5 = [
             x,
-            y + (height * 0.7)
+            y + (height * 0.76)
         ]
 
         const Point6 = [
             x,
-            y + (height * 0.3)
+            y + (height * 0.25)
         ]
 
         return [...Point1, ...Point2, ...Point3, ...Point4, ...Point5, ...Point6]
     }
 
     addActiveShape() {
-        const shape = new PIXI.Graphics()
-        shape.beginFill(0x1a1d4e)
-        shape.drawPolygon(this.getPolygonNodes(20, 30, 140, 150))
-        shape.endFill()
-        this.app.stage.addChild(shape)
+        this.active_shape = new PIXI.Graphics()
+        this.active_shape.beginFill(0x1a1d4e)
+        this.active_shape.drawPolygon(this.getPolygonNodes(24, 27, 134, 170))
+        this.active_shape.endFill()
+        this.app.stage.addChild(this.active_shape)
     }
 
     addBackground() {
@@ -168,13 +169,32 @@ export class FacilityManagement {
             icon.interactive = true;
             icon.buttonMode = true;
 
-            icon.on('click', _ => {
+            icon.addEventListener('pointerdown', _ => {
                 this.textContents.forEach(elem => {
                     elem.style.display = 'none';
                 })
 
                 this.textContents[index].style.display = 'block'
+
+                this.setIconActiveShapePosition(index)
             })
         });
+    }
+
+    setIconActiveShapePosition(index) {
+        switch (index) {
+            case 0:
+                this.active_shape.x = 0
+                this.active_shape.y = 0
+                break;
+            
+            case 1:
+                this.active_shape.x = 157
+                this.active_shape.y = 4.5
+                break;
+        
+            default:
+                break;
+        }
     }
 }
