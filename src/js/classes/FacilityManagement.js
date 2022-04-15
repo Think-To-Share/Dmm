@@ -1,7 +1,6 @@
-import * as PIXI from 'pixi.js';
+import { Application, Graphics, Sprite } from 'pixi.js';
 import { Renderer } from '@pixi/core';
 import { EventSystem } from '@pixi/events';
-import '@pixi/graphics-extras';
 
 export class FacilityManagement {
     constructor() {
@@ -28,7 +27,7 @@ export class FacilityManagement {
 
     initializePixi() {
         delete Renderer.__plugins.interaction;
-        this.app = new PIXI.Application({
+        this.app = new Application({
             backgroundColor: 0xffffff,
             width: 724,
             height: 541,
@@ -75,16 +74,16 @@ export class FacilityManagement {
     }
 
     addActiveShape() {
-        this.active_shape = new PIXI.Graphics()
+        this.active_shape = new Graphics()
         this.active_shape.beginFill(0x1a1d4e)
-        this.active_shape.drawPolygon(this.getPolygonNodes(24, 27, 134, 170))
+        this.active_shape.drawPolygon(this.getPolygonNodes(20, 19, 159, 185))
         this.active_shape.endFill()
-        this.active_shape.zIndex = 1
+        this.active_shape.zIndex = 0
         this.app.stage.addChild(this.active_shape)
     }
 
     addBackground() {
-        this.app.loader.add('bg', require('../../images/facilities-management/bg.jpg'))
+        this.app.loader.add('bg', require('../../images/facilities-management/bg.png'))
     }
 
     addIcons() {
@@ -95,67 +94,67 @@ export class FacilityManagement {
 
     loadElements() {
         this.app.loader.load((load, res) => {
-            const bg = new PIXI.Sprite(res.bg.texture)
+            const bg = new Sprite(res.bg.texture)
             bg.x = 0;
             bg.y = 0;
             this.app.stage.addChild(bg);
 
-            const icon_1 = new PIXI.Sprite(res.icon_1.texture)
+            const icon_1 = new Sprite(res.icon_1.texture)
             icon_1.x = 45;
             icon_1.y = 60;
             this.app.stage.addChild(icon_1)
 
-            const icon_2 = new PIXI.Sprite(res.icon_2.texture)
+            const icon_2 = new Sprite(res.icon_2.texture)
             icon_2.x = 205;
             icon_2.y = 60;
             this.app.stage.addChild(icon_2)
 
-            const icon_3 = new PIXI.Sprite(res.icon_3.texture)
+            const icon_3 = new Sprite(res.icon_3.texture)
             icon_3.x = 360;
             icon_3.y = 70;
             this.app.stage.addChild(icon_3)
 
-            const icon_4 = new PIXI.Sprite(res.icon_4.texture)
+            const icon_4 = new Sprite(res.icon_4.texture)
             icon_4.x = 520;
             icon_4.y = 60;
             this.app.stage.addChild(icon_4)
 
-            const icon_5 = new PIXI.Sprite(res.icon_5.texture)
+            const icon_5 = new Sprite(res.icon_5.texture)
             icon_5.x = 115;
             icon_5.y = 220;
             this.app.stage.addChild(icon_5)
 
-            const icon_6 = new PIXI.Sprite(res.icon_6.texture)
+            const icon_6 = new Sprite(res.icon_6.texture)
             icon_6.x = 280;
             icon_6.y = 220;
             this.app.stage.addChild(icon_6)
 
-            const icon_7 = new PIXI.Sprite(res.icon_7.texture)
+            const icon_7 = new Sprite(res.icon_7.texture)
             icon_7.x = 430;
             icon_7.y = 220;
             this.app.stage.addChild(icon_7)
 
-            const icon_8 = new PIXI.Sprite(res.icon_8.texture)
+            const icon_8 = new Sprite(res.icon_8.texture)
             icon_8.x = 590;
             icon_8.y = 220;
             this.app.stage.addChild(icon_8)
 
-            const icon_9 = new PIXI.Sprite(res.icon_9.texture)
+            const icon_9 = new Sprite(res.icon_9.texture)
             icon_9.x = 45;
             icon_9.y = 370;
             this.app.stage.addChild(icon_9)
 
-            const icon_10 = new PIXI.Sprite(res.icon_10.texture)
+            const icon_10 = new Sprite(res.icon_10.texture)
             icon_10.x = 205;
             icon_10.y = 375;
             this.app.stage.addChild(icon_10)
 
-            const icon_11 = new PIXI.Sprite(res.icon_11.texture)
+            const icon_11 = new Sprite(res.icon_11.texture)
             icon_11.x = 360;
             icon_11.y = 375;
             this.app.stage.addChild(icon_11)
 
-            const icon_12 = new PIXI.Sprite(res.icon_12.texture)
+            const icon_12 = new Sprite(res.icon_12.texture)
             icon_12.x = 520;
             icon_12.y = 365;
             this.app.stage.addChild(icon_12)
@@ -194,6 +193,54 @@ export class FacilityManagement {
                 this.active_shape.y = 4.5
                 break;
         
+            case 2:
+                this.active_shape.x = 314.03
+                this.active_shape.y = 7.6
+                break;
+
+            case 3:
+                this.active_shape.x = 462
+                this.active_shape.y = 7.6
+                break;
+
+            case 4:
+                this.active_shape.x = 62
+                this.active_shape.y = 158
+                break;
+
+            case 5:
+                this.active_shape.x = 220
+                this.active_shape.y = 158
+                break;
+
+            case 6:
+                this.active_shape.x = 380
+                this.active_shape.y = 158
+                break;
+            case 7:
+                this.active_shape.x = 535
+                this.active_shape.y = 158
+                break;
+
+
+            case 8:
+                this.active_shape.x = 0
+                this.active_shape.y = 308
+                break;
+
+            case 9:
+                this.active_shape.x = 157
+                this.active_shape.y = 312
+                break;
+
+            case 10:
+                    this.active_shape.x = 314.03
+                    this.active_shape.y = 315
+                    break;
+            case 11:
+                    this.active_shape.x = 462
+                    this.active_shape.y = 312
+                    break;
             default:
                 break;
         }
