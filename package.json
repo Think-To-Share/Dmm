@@ -35,6 +35,7 @@
     "@pixi/graphics-extras": "^6.3.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.1",
+    "gsap": "^3.10.3",
     "pixi.js": "^6.3.0",
     "rfs": "^9.0.6",
     "tiny-slider": "^2.9.4"

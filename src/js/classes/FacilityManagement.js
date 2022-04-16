@@ -1,8 +1,12 @@
 import { Application, Graphics, Sprite } from 'pixi.js';
 import { Renderer } from '@pixi/core';
 import { EventSystem } from '@pixi/events';
+import { gsap } from "gsap";
+import { PixiPlugin } from "gsap/PixiPlugin";
 
 export class FacilityManagement {
+    floatingAnimation  = null;
+
     constructor() {
         this.pixiContainerElem = document.querySelector('.smart-integrated-section .pixi-container')
         this.textContents = document.querySelectorAll('.smart-integrated-section .smart-integrated-content');
@@ -11,6 +15,7 @@ export class FacilityManagement {
     init() {
         this.hideTexts()
         this.initializePixi()
+        this.initializeGsap()
         this.addActiveShape()
         this.addBackground()
         this.addIcons()
@@ -37,6 +42,10 @@ export class FacilityManagement {
         this.pixiContainerElem.appendChild(this.app.view)
         this.app.stage.sortableChildren = true;
         this.app.renderer.addSystem(EventSystem, 'events');
+    }
+
+    initializeGsap() {
+        gsap.registerPlugin(PixiPlugin);
     }
 
     getPolygonNodes(x, y, width, height) {
@@ -103,6 +112,7 @@ export class FacilityManagement {
             icon_1.x = 45;
             icon_1.y = 60;
             this.app.stage.addChild(icon_1)
+            this.setFloatingAnimation(icon_1)
 
             const icon_2 = new Sprite(res.icon_2.texture)
             icon_2.x = 205;
@@ -177,6 +187,7 @@ export class FacilityManagement {
                 this.textContents[index].style.display = 'block'
 
                 this.setIconActiveShapePosition(index)
+                this.setFloatingAnimation(icon)
             })
         });
     }
@@ -244,5 +255,35 @@ export class FacilityManagement {
             default:
                 break;
         }
+
+        gsap.fromTo(this.active_shape, {
+            alpha: 0,
+        }, 
+        {
+            alpha: 1,
+            duration: 0.4,
+        })
+    }
+
+    setFloatingAnimation(icon, ) {
+        if(this.floatingAnimation) {
+            this.floatingAnimation.pause()
+            this.floatingAnimation.progress(0)
+            this.floatingAnimation.kill()
+            this.floatingAnimation = null;
+        }
+
+        this.floatingAnimation = gsap.timeline({repeat: -1})
+        this.floatingAnimation.to(icon, {
+            y: '-=8',
+            ease: 'linear',
+            duration: 0.9,
+        })
+
+        this.floatingAnimation.to(icon, {
+            y: '+=8',
+            ease: 'linear',
+            duration: 0.9
+        })
     }
 }
