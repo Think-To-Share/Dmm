@@ -184,16 +184,38 @@ export class FacilityManagement {
                     elem.style.display = 'none';
                 })
 
-                this.textContents[index].style.display = 'block'
-                gsap.fromTo(this.textContents[index], {
+                const currentText = this.textContents[index];
+                currentText.style.display = 'block'
+                // gsap.from(this.textContents[index], {
+                //     autoAlpha: 0,
+                //     x: -10,
+                //     ease: 'power3.out',
+                //     duration: 0.9
+                // })
+                const textAnimationTl = gsap.timeline()
+                textAnimationTl.fromTo(currentText.querySelector('.smart-integrated-heading'), {
                     autoAlpha: 0,
-                    x: -10
+                    y: 20,
                 },
                 {
                     autoAlpha: 1,
-                    x: 0,
-                    ease: 'power3.out',
-                    duration: 0.9
+                    y: 0,
+                })
+                textAnimationTl.fromTo(currentText.querySelector('.smart-integrated-text'), {
+                    autoAlpha: 0,
+                },
+                {
+                    autoAlpha: 1,
+                    duration: 1,
+                    ease: 'power4.out',
+                })
+                textAnimationTl.fromTo(currentText.querySelector('.smart-integrated-btn-container'), {
+                    autoAlpha: 0,
+                    y: 30,
+                },
+                {
+                    autoAlpha: 1,
+                    y: 0,
                 })
 
                 this.setIconActiveShapePosition(index)

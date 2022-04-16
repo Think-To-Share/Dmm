@@ -58080,15 +58080,35 @@ var FacilityManagement = /*#__PURE__*/ function() {
                         _this1.textContents.forEach(function(elem) {
                             elem.style.display = "none";
                         });
-                        _this1.textContents[index].style.display = "block";
-                        gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(_this1.textContents[index], {
+                        var currentText = _this1.textContents[index];
+                        currentText.style.display = "block";
+                        // gsap.from(this.textContents[index], {
+                        //     autoAlpha: 0,
+                        //     x: -10,
+                        //     ease: 'power3.out',
+                        //     duration: 0.9
+                        // })
+                        var textAnimationTl = gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.timeline();
+                        textAnimationTl.fromTo(currentText.querySelector(".smart-integrated-heading"), {
                             autoAlpha: 0,
-                            x: -10
+                            y: 20
                         }, {
                             autoAlpha: 1,
-                            x: 0,
-                            ease: "power3.out",
-                            duration: 0.9
+                            y: 0
+                        });
+                        textAnimationTl.fromTo(currentText.querySelector(".smart-integrated-text"), {
+                            autoAlpha: 0
+                        }, {
+                            autoAlpha: 1,
+                            duration: 1,
+                            ease: "power4.out"
+                        });
+                        textAnimationTl.fromTo(currentText.querySelector(".smart-integrated-btn-container"), {
+                            autoAlpha: 0,
+                            y: 30
+                        }, {
+                            autoAlpha: 1,
+                            y: 0
                         });
                         _this1.setIconActiveShapePosition(index);
                         _this1.setFloatingAnimation(icon);
