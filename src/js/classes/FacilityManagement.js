@@ -185,6 +185,16 @@ export class FacilityManagement {
                 })
 
                 this.textContents[index].style.display = 'block'
+                gsap.fromTo(this.textContents[index], {
+                    autoAlpha: 0,
+                    x: -10
+                },
+                {
+                    autoAlpha: 1,
+                    x: 0,
+                    ease: 'power3.out',
+                    duration: 0.9
+                })
 
                 this.setIconActiveShapePosition(index)
                 this.setFloatingAnimation(icon)

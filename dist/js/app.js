@@ -58081,6 +58081,15 @@ var FacilityManagement = /*#__PURE__*/ function() {
                             elem.style.display = "none";
                         });
                         _this1.textContents[index].style.display = "block";
+                        gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(_this1.textContents[index], {
+                            autoAlpha: 0,
+                            x: -10
+                        }, {
+                            autoAlpha: 1,
+                            x: 0,
+                            ease: "power3.out",
+                            duration: 0.9
+                        });
                         _this1.setIconActiveShapePosition(index);
                         _this1.setFloatingAnimation(icon);
                     });
