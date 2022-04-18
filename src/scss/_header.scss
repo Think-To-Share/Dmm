@@ -15,7 +15,7 @@
     .dmm-header-main {
         display: none;
         // width: 100%;
-        ul {
+       > ul {
             display: flex;
             justify-content: center;
             gap: 38px;
@@ -24,19 +24,75 @@
             padding: 0;
             height: 100%;
             align-items: center;
-            li {
+           > li {
                 list-style-type: none;
                 padding: 15px 0;
                 letter-spacing: 2.2px;
-                a {
+                position: relative;
+               > a {
                     text-decoration: none;
                     color: #354f5c;
                     @include font-size(1rem);
                     font-family: $secondary-font;
                     font-weight: 400;
                     transition: color 0.3s ease-in-out;
+                    text-transform: capitalize;
                     &:hover {
                         color:#0094de;
+                    }
+                }
+                ul{
+                    visibility: hidden;
+                    opacity: 0;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #fff;
+                    box-shadow: 0 1px 3px 0 #efefef;
+                    transition: opacity 0.5s ease-in-out,transform 0.3s ease-in-out;
+                    transform: translateY(-10px);
+                    z-index: 10;
+                    > li{
+                        position: relative;
+                        a{
+                            padding: 7px 25px;
+                            text-decoration: none;
+                            color: #354f5c;
+                            display: block;
+                            font-family:$secondary-font;
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            @include font-size(0.9rem);
+                            // transition: background-color 0.5s ease-in-out;
+                            white-space: nowrap;
+                            outline: none;
+                            &:hover {
+                                color: $secondary-color;   
+                            }
+                        }
+
+                        > ul{
+                            top:0;
+                            left:100%;
+                        }
+
+                        &:hover{
+                            > ul{
+                                cursor: pointer;
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    > ul {
+                        transform: translateY(0);
+                        visibility: visible;
+                        opacity: 1;
                     }
                 }
             }
@@ -85,6 +141,7 @@
                 a{
                     background-color: #3c5b9b;
                     fill: #fff;
+                    
                 }
             }
             &:nth-child(2){
@@ -95,25 +152,13 @@
             }
             &:nth-child(3){
                 a{
-                    background-color: #fe3432;
-                    fill: #fff;
-                }
-            }
-            &:nth-child(4){
-                a{
-                    background-color: #0173b2;
-                    fill: #fff;
-                }
-            }
-            &:nth-child(5){
-                a{
-                    background-color: #f73e29;
+                    background-color: #bc2a8d;
                     fill: #fff;
                 }
             }
             &:last-child{
                 a{
-                    background-color: #c60911;
+                    background-color: #0173b2;
                     fill: #fff;
                 }
             }
