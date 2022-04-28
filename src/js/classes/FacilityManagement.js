@@ -17,6 +17,7 @@ export class FacilityManagement {
         this.initializePixi()
         this.initializeGsap()
         this.addActiveShape()
+        this.addHoverShape()
         this.addBackground()
         this.addIcons()
         this.loadElements()
@@ -89,6 +90,17 @@ export class FacilityManagement {
         this.active_shape.endFill()
         this.active_shape.zIndex = 0
         this.app.stage.addChild(this.active_shape)
+    }
+
+    addHoverShape(){
+        this.hover_shape = new Graphics()
+        this.hover_shape.beginFill(0x5c61ab)
+        this.hover_shape.drawPolygon(this.getPolygonNodes(20, 19, 159, 185))
+        this.hover_shape.endFill()
+        this.hover_shape.zIndex = 0
+        this.app.stage.addChild(this.hover_shape)
+        this.hover_shape.scale.x = 0
+        this.hover_shape.scale.y = 0
     }
 
     addBackground() {
@@ -179,6 +191,17 @@ export class FacilityManagement {
             icon.buttonMode = true;
             icon.zIndex = 1
 
+            icon.addEventListener('mouseenter', () => {
+                this.hover_shape.scale.x = 1;
+                this.hover_shape.scale.y = 1;
+                this.setIconBkgShapePosition(index,this.hover_shape)
+            })
+
+            icon.addEventListener('mouseleave', () => {
+                this.hover_shape.scale.x = 0;
+                this.hover_shape.scale.y = 0;
+            })
+
             icon.addEventListener('pointerdown', _ => {
                 this.textContents.forEach(elem => {
                     elem.style.display = 'none';
@@ -186,12 +209,7 @@ export class FacilityManagement {
 
                 const currentText = this.textContents[index];
                 currentText.style.display = 'block'
-                // gsap.from(this.textContents[index], {
-                //     autoAlpha: 0,
-                //     x: -10,
-                //     ease: 'power3.out',
-                //     duration: 0.9
-                // })
+
                 const textAnimationTl = gsap.timeline()
                 textAnimationTl.fromTo(currentText.querySelector('.smart-integrated-heading'), {
                     autoAlpha: 0,
@@ -218,77 +236,77 @@ export class FacilityManagement {
                     y: 0,
                 })
 
-                this.setIconActiveShapePosition(index)
+                this.setIconBkgShapePosition(index,this.active_shape)
                 this.setFloatingAnimation(icon)
             })
         });
     }
 
-    setIconActiveShapePosition(index) {
+    setIconBkgShapePosition(index,shape) {
         switch (index) {
             case 0:
-                this.active_shape.x = 0
-                this.active_shape.y = 0
+                shape.x = 0
+                shape.y = 0
                 break;
             
             case 1:
-                this.active_shape.x = 157
-                this.active_shape.y = 4.5
+                shape.x = 157
+                shape.y = 4.5
                 break;
         
             case 2:
-                this.active_shape.x = 314.03
-                this.active_shape.y = 7.6
+                shape.x = 314.03
+                shape.y = 7.6
                 break;
 
             case 3:
-                this.active_shape.x = 462
-                this.active_shape.y = 7.6
+                shape.x = 462
+                shape.y = 7.6
                 break;
 
             case 4:
-                this.active_shape.x = 62
-                this.active_shape.y = 158
+                shape.x = 62
+                shape.y = 158
                 break;
 
             case 5:
-                this.active_shape.x = 220
-                this.active_shape.y = 158
+                shape.x = 220
+                shape.y = 158
                 break;
 
             case 6:
-                this.active_shape.x = 380
-                this.active_shape.y = 158
+                shape.x = 380
+                shape.y = 158
                 break;
             case 7:
-                this.active_shape.x = 535
-                this.active_shape.y = 158
+                shape.x = 535
+                shape.y = 158
                 break;
 
 
             case 8:
-                this.active_shape.x = 0
-                this.active_shape.y = 308
+                shape.x = 0
+                shape.y = 308
                 break;
 
             case 9:
-                this.active_shape.x = 157
-                this.active_shape.y = 312
+                shape.x = 157
+                shape.y = 312
                 break;
 
             case 10:
-                    this.active_shape.x = 314.03
-                    this.active_shape.y = 315
+                    shape.x = 314.03
+                    shape.y = 315
                     break;
             case 11:
-                    this.active_shape.x = 462
-                    this.active_shape.y = 312
+                    shape.x = 462
+                    shape.y = 312
                     break;
             default:
                 break;
         }
 
-        gsap.fromTo(this.active_shape, {
+        gsap.fromTo(shape, {
             alpha: 0,
         }, 
         {
@@ -296,6 +314,7 @@ export class FacilityManagement {
             duration: 0.4,
         })
     }
+
 
     setFloatingAnimation(icon, ) {
         if(this.floatingAnimation) {

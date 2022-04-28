@@ -7,6 +7,7 @@ if (document.querySelector('.dmm-hero-section')) {
         items: 1,
         nav: true,
         autoplay: true,
+        autoHeight:true,
         controls:false,
         autoplayTimeout:5000,
         autoplayButtonOutput: false,
@@ -107,9 +108,6 @@ if (document.querySelector('.case-studies-section')) {
         }
     })
 
-    // document.querySelectorAll('.main-text-area .text-area p').forEach(p => {
-    //     p.classList.add('hide')
-    // });
 
     const case_studies_texts = document.querySelectorAll('.case-studies-section .sub-heading .text')
     case_studies_texts.forEach(text => {
@@ -125,7 +123,10 @@ if (document.querySelector('.case-studies-section')) {
 
         case_studies_texts[info.index % case_studies_texts.length].classList.remove('hide')
     })
-
+  
+}
+if (document.querySelector('.smart-integrated-section')) {
     new FacilityManagement().init();
 }
+
 
