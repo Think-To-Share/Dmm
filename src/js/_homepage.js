@@ -1,18 +1,18 @@
 import { tns } from 'tiny-slider/src/tiny-slider'
 import { FacilityManagement } from './classes/FacilityManagement'
 
-if (document.querySelector('.dmm-hero-section')) {
-    tns({
-        container: '.dmm-hero-section .slides',
-        items: 1,
-        nav: true,
-        autoplay: true,
-        autoHeight:true,
-        controls:false,
-        autoplayTimeout:5000,
-        autoplayButtonOutput: false,
-    })
-}
+// if (document.querySelector('.dmm-hero-section')) {
+//     tns({
+//         container: '.dmm-hero-section .slides',
+//         items: 1,
+//         nav: true,
+//         autoplay: true,
+//         autoHeight:true,
+//         controls:false,
+//         autoplayTimeout:5000,
+//         autoplayButtonOutput: false,
+//     })
+// }
 
 if (document.querySelector('.provide-better-section')) {
     tns({
@@ -38,54 +38,56 @@ if (document.querySelector('.provide-better-section')) {
     })
 }
 
-if (document.querySelector('.testimonials-section')) {
-    // hide all hero text
-    const heroText = document.querySelectorAll('.testimonial-text-main p')
-    heroText.forEach(text => {
-        text.style.display = 'none'
-    })
+// if (document.querySelector('.testimonials-section')) {
+//     // hide all hero text
+//     const heroText = document.querySelectorAll('.testimonial-text-main p')
+//     heroText.forEach(text => {
+//         text.style.display = 'none'
+//     })
     
-    const heroSlider = tns({
-        container: '.testimonials-section .testimonials',
-        items: 1,
-        nav: true,
-        autoplay: true,
-        autoplayButtonOutput: false,
-        controls: false,
-    })
-    // show first hero text
-    heroText[0].style.display = 'block'
+//     const heroSlider = tns({
+//         container: '.testimonials-section .testimonials',
+//         items: 1,
+//         nav: true,
+//         autoplay: true,
+//         autoplayButtonOutput: false,
+//         controls: false,
+//     })
+//     // show first hero text
+//     heroText[0].style.display = 'block'
 
-    // show hero text on slide change
-    heroSlider.events.on('indexChanged', (info) => {
-        const text = heroText[info.index - 1]
+//     // show hero text on slide change
+//     heroSlider.events.on('indexChanged', (info) => {
+//         const text = heroText[info.index - 1]
 
-        if(text) {
-            heroText.forEach(text => {
-                text.style.display = 'none'
-            })
+//         if(text) {
+//             heroText.forEach(text => {
+//                 text.style.display = 'none'
+//             })
 
-            text.style.display = 'block'
+//             text.style.display = 'block'
 
-            // animate hero text
-            text.classList.add('animate__animated', 'animate__slideInRight')
-            text.style.setProperty('--animate-duration', '0.5s');
-            text.addEventListener('animationend', () => {
-                text.classList.remove('animate__animated', 'animate__slideInRight');
-            })
-        }
-    })
-}
+//             // animate hero text
+//             text.classList.add('animate__animated', 'animate__slideInRight')
+//             text.style.setProperty('--animate-duration', '0.5s');
+//             text.addEventListener('animationend', () => {
+//                 text.classList.remove('animate__animated', 'animate__slideInRight');
+//             })
+//         }
+//     })
+// }
 
-if (document.querySelector('.testimonial-box-sec')) {
+if (document.querySelector('.testimonials-section')) {
     tns({
-        container: '.testimonial-box-sec .slides',
+        container: '.testimonial-text-main .slides',
         items: 1,
         nav: false,
         autoplay: true,
         controls:false,
         autoplayTimeout:5000,
+        autoHeight: true,
         autoplayButtonOutput: false,
+        navContainer: '.testimonial-left .nav',
     })
 }
 
@@ -129,4 +131,32 @@ if (document.querySelector('.smart-integrated-section')) {
     new FacilityManagement().init();
 }
 
+// topbar
+//Get the button
+let totop = document.querySelector("#totop");
 
+// When the user scrolls down 50px from the top of the document, show the button
+window.onscroll = () =>{scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    totop.style.display = "block";
+  } else {
+    totop.style.display = "none";
+  }
+}
+
+window.addEventListener('load', () => {
+    document.querySelector('#totop').addEventListener('click',(e) => {
+        e.preventDefault();
+
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    })
+})
+
+// header space
+window.addEventListener('load', () => {
+    const header_height = document.querySelector('.dmm-header').offsetHeight
+    document.querySelector('.header-space').style.height=`${header_height}px`;
+})

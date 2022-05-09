@@ -1,6 +1,151 @@
 // header section
+.header-space{
+    display: none;
+    @media(min-width:992px){
+       display: block;
+    }
+}
 .dmm-header {
-    margin-top: 15px;
+    background: #fff;
+    z-index: 9999;
+    margin: 0 auto;
+    border: none;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    animation-duration: .5s;
+    animation-name: sticky-animation;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    @media(min-width:992px){
+        position: fixed;
+        box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
+    }
+    .header-row{
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        @media(min-width:992px){
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .header-icon{
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            gap: 6px;
+            padding-bottom: 12px;
+                @media(min-width:768px){
+                    justify-content:flex-start;
+                }
+            li{
+                list-style-type: none;
+                a{
+                    height: 30px;
+                    width: 30px;
+                    position: relative;
+                    display: inline-block;
+                    border-radius: 100%;
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                        background-color: #000 !important; 
+                    }
+                    svg{
+                        height: 15px;
+                        width: 15px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                &:first-child{
+                    a{
+                        background-color: #3c5b9b;
+                        fill: #fff;
+                        
+                    }
+                }
+                &:nth-child(2){
+                    a{
+                        background-color: #27a9e1;
+                        fill: #fff;
+                    }
+                }
+                &:nth-child(3){
+                    a{
+                        background-color: #bc2a8d;
+                        fill: #fff;
+                    }
+                }
+                &:last-child{
+                    a{
+                        background-color: #0173b2;
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        .f-text{
+            text-align: center;
+            @media (min-width: 992px) {
+                text-align: left;
+            }
+            svg{
+                height: 22px;
+                width: 22px;
+                fill: #2d328f;
+            }
+            font-family: $secondary-font;
+            font-weight: 400;
+            color: #354f5c;
+            @include font-size(0.9rem);
+            a{
+                color: #2d3193;
+                font-family: $secondary-font;
+                font-weight: 500;
+                @include font-size(1rem);
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    text-decoration:none;
+                    color: #0094de;
+                }
+            }
+        }
+        .career{
+            text-decoration: none;
+            font-family: $secondary-font;
+            font-weight: 500;
+            @include font-size(0.9rem);
+            color: #354f5c;
+            transition: all 0.3s ease-in-out;
+            display:none;
+            &:hover{
+                text-decoration:underline;
+                color: #0094de;
+            }
+            @media (min-width: 992px) {
+            display: block;
+            }
+        }
+        .Faq{
+            text-decoration: none;
+            font-family: $secondary-font;
+            font-weight: 500;
+            @include font-size(0.9rem);
+            color: #354f5c;
+            transition: all 0.3s ease-in-out;
+            display:none;
+            &:hover{
+                text-decoration:underline;
+                color: #0094de;
+            }
+            @media (min-width: 992px) {
+            display: block;
+            }
+        }
+    }
     .logo-side {
         width: 188px;
         img {
@@ -40,6 +185,11 @@
                     &:hover {
                         color:#0094de;
                     }
+                }
+                svg{
+                    height: 15px;
+                    width: 15px;
+                    fill: #354f5c;
                 }
                 ul{
                     visibility: hidden;
@@ -107,119 +257,33 @@
             display: block;
         }
     }
-    .header-icon{
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        gap: 6px;
-        padding-bottom: 12px;
-            @media(min-width:768px){
-                justify-content:flex-start;
-            }
-        li{
-            list-style-type: none;
-            a{
-                height: 30px;
-                width: 30px;
-                position: relative;
-                display: inline-block;
-                border-radius: 100%;
-                transition: all 0.3s ease-in-out;
-                &:hover{
-                    background-color: #000 !important; 
-                }
-                svg{
-                    height: 15px;
-                    width: 15px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-            }
-            &:first-child{
-                a{
-                    background-color: #3c5b9b;
-                    fill: #fff;
-                    
-                }
-            }
-            &:nth-child(2){
-                a{
-                    background-color: #27a9e1;
-                    fill: #fff;
-                }
-            }
-            &:nth-child(3){
-                a{
-                    background-color: #bc2a8d;
-                    fill: #fff;
-                }
-            }
-            &:last-child{
-                a{
-                    background-color: #0173b2;
-                    fill: #fff;
-                }
-            }
-        }
+}
+
+#totop{
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    text-align: center;
+    line-height: 1;
+    padding: 10px;
+    background: $secondary-color;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 1px rgb(0 0 0 / 30%);
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+    svg{
+        fill: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 20px;
+        width: 20px;
     }
-    .f-text{
-        text-align: center;
-        @media (min-width: 992px) {
-            text-align: left;
-        }
-        svg{
-            height: 22px;
-            width: 22px;
-            fill: #2d328f;
-        }
-        font-family: $secondary-font;
-        font-weight: 400;
-        color: #354f5c;
-        @include font-size(0.9rem);
-        a{
-            color: #2d3193;
-            font-family: $secondary-font;
-            font-weight: 500;
-            @include font-size(1rem);
-            transition: all 0.3s ease-in-out;
-            &:hover{
-                text-decoration:none;
-                color: #0094de;
-            }
-        }
-    }
-    .career{
-        text-decoration: none;
-        font-family: $secondary-font;
-        font-weight: 500;
-        @include font-size(0.9rem);
-        color: #354f5c;
-        transition: all 0.3s ease-in-out;
-        display:none;
-        &:hover{
-            text-decoration:underline;
-            color: #0094de;
-        }
-        @media (min-width: 992px) {
-        display: block;
-        }
-    }
-    .Faq{
-        text-decoration: none;
-        font-family: $secondary-font;
-        font-weight: 500;
-        @include font-size(0.9rem);
-        color: #354f5c;
-        transition: all 0.3s ease-in-out;
-        display:none;
-        &:hover{
-            text-decoration:underline;
-            color: #0094de;
-        }
-        @media (min-width: 992px) {
-        display: block;
-        }
+    &:hover{
+        box-shadow: 0 0 6px 1px rgb(0 0 0 / 20%);
+        opacity: 0.8;
     }
 }
